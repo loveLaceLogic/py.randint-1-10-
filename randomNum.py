@@ -1,10 +1,18 @@
-# This program generates a random number between 1 and 10, asks the user to guess the number, and then prints the random number.
 import random
 
-randomNum = random.randint(1,10)
+# Generate a random number between 1 and 10
+random_num = random.randint(1, 10)
 
-print ('Enter a number between 1 and 10:')
-guess = input()
+# Get user input
+guess = input("Enter a number between 1 and 10: ")
 
-randomNum = str(randomNum)
-print ('The number is ' + randomNum)
+# Check if input is a valid integer
+if guess.isdigit():
+    guess = int(guess)
+    if guess == random_num:
+        print("Congratulations! You guessed the correct number.")
+    else:
+        print(f"Sorry, the correct number was {random_num}.")
+else:
+    print("Invalid input! Please enter a number between 1 and 10.")
+
